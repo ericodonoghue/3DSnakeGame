@@ -1,0 +1,13 @@
+﻿  main.cpp
+D:\U of U\senior\fall 2021\computer graphics\_personal_projects\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(127,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\U of U\senior\fall 2021\computer graphics\_personal_projects\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(134,26): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\U of U\senior\fall 2021\computer graphics\_personal_projects\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(134,15): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\U of U\senior\fall 2021\computer graphics\_personal_projects\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(140,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\U of U\senior\fall 2021\computer graphics\_personal_projects\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(144,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\U of U\senior\fall 2021\computer graphics\_personal_projects\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(154,50): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\U of U\senior\fall 2021\computer graphics\_personal_projects\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(154,28): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\U of U\senior\fall 2021\computer graphics\_personal_projects\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(166,27): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\U of U\senior\fall 2021\computer graphics\_personal_projects\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(166,15): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+D:\U of U\senior\fall 2021\computer graphics\_personal_projects\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(174,23): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+  3D_snake_game.vcxproj -> D:\U of U\senior\fall 2021\computer graphics\_personal_projects\graphics_projects\3D_snake_game\Debug\3D_snake_game.exe
+          1 file(s) copied.
