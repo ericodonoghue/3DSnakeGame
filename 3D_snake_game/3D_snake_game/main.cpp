@@ -46,13 +46,14 @@ void reset_game()
 	body_pos[HEAD][_z] = 10;
 	direction = 0;
 	points = 0;
+	length = 1;
 	view_rotx = 45.0F;
 	view_roty = 0.0F;
 	view_rotz = 0.0F;
 	rotation = 90.0F;
 }
 
-void ManipulateViewAngle() //TODO: understand why
+void ManipulateViewAngle()
 {
 	glRotatef(view_rotx, 1.0, 0.0, 0.0);//Rotate Arround X axis
 	glRotatef(view_roty, 0.0, 1.0, 0.0);//Rotate Arround Y axis
@@ -101,7 +102,27 @@ void DrawSnake()
 		glutSolidCube(1);
 	glPopMatrix();
 
-	// TODO: draw body segments
+	int i;
+	for (i = 1; i < length; i++) { // iteration starts at 1 as the head is stored at index 0
+		glPushMatrix();
+			ManipulateViewAngle();
+			glColor3f(0, 1, 0);
+			glTranslatef(body_pos[i][_x], -10.0f, body_pos[i][_z]);
+			glScalef(9.8, 9.8, 9.8);
+			glutSolidCube(1);
+		glPopMatrix();
+	}
+}
+
+void DrawFood()
+{
+	glPushMatrix();
+		ManipulateViewAngle();
+		glColor3f(0, 0, 1.0);
+		glTranslatef(food[_x], -10.0f, food[_z]);
+		glScalef(0.3, 0.3, 0.3);
+		glutSolidSphere(10, 20, 20);
+	glPopMatrix();
 }
 
 void Draw()
@@ -116,6 +137,8 @@ void Draw()
 	if (game_state) {
 		DrawPlatform();
 		DrawSnake();
+		DrawFood();
+		// TODO: draw score
 	}
 	else
 		DrawStart();
@@ -124,8 +147,6 @@ void Draw()
 	glutPostRedisplay();
 	glutSwapBuffers();
 }
-
-// TODO: generate food
 
 
 bool check_collsion()
@@ -138,6 +159,26 @@ bool check_collsion()
 			return true; 
 	}
 	return false;
+}
+
+void generate_food()
+{
+	if  ((body_pos[HEAD][_x] == food[_x]  && body_pos[HEAD][_z] == food[_z]) ||
+		((body_pos[HEAD][_x] >= food[_x]) && (body_pos[HEAD][_x] <= food[_x] + 4) && (body_pos[HEAD][_z] >= food[_z]) && (body_pos[HEAD][_z] <= food[_z] + 4)) ||
+		((body_pos[HEAD][_x] <= food[_x]) && (body_pos[HEAD][_x] >= food[_x] - 4) && (body_pos[HEAD][_z] <= food[_z]) && (body_pos[HEAD][_z] >= food[_z] - 4)) ||
+		((body_pos[HEAD][_x] <= food[_x]) && (body_pos[HEAD][_x] >= food[_x] - 4) && (body_pos[HEAD][_z] >= food[_z]) && (body_pos[HEAD][_z] <= food[_z] + 4)) ||
+		((body_pos[HEAD][_x] >= food[_x]) && (body_pos[HEAD][_x] <= food[_x] + 4) && (body_pos[HEAD][_z] <= food[_z]) && (body_pos[HEAD][_z] >= food[_z] - 4))) {
+		points++;
+		length++;
+
+		int max; int min;
+		max = platform_width - 12;
+		min = -10;
+		food[_x] = (rand() % (max - min)) + min;
+		max = platform_length - 45;
+		min = -20;
+		food[_z] = (rand() % (max - min)) + min;
+	}	
 }
 
 void Play(int v)
@@ -164,7 +205,17 @@ void Play(int v)
 	if (check_collsion())
 		game_state = false;
 
-	// TODO: save postions of body segments
+	generate_food();
+
+	int i;
+	for (i = 1; i < length; i++) {
+		prev_x[0] = prev_x[1];
+		prev_z[0] = prev_z[1];
+		prev_x[1] = body_pos[i][_x];
+		prev_z[1] = body_pos[i][_z];
+		body_pos[i][_x] = prev_x[0];
+		body_pos[i][_z] = prev_z[0];
+	}
 
 	glutTimerFunc(130, Play, 0);
 }
@@ -175,16 +226,20 @@ void keyboard(unsigned char key, int x, int y)
 	switch (key)
 	{
 		case 'w' :
-			direction = DOWN;
+			if (direction != UP)
+				direction = DOWN;
 			break;
 		case 's':
-			direction = UP;
+			if (direction != DOWN)
+				direction = UP;
 			break;
 		case 'a':
-			direction = LEFT;
+			if (direction != RIGHT)
+				direction = LEFT;
 			break;
 		case 'd':
-			direction = RIGHT;
+			if (direction != LEFT)
+				direction = RIGHT;
 			break;
 		case 13: // enter key
 			game_state = true;
@@ -212,11 +267,18 @@ int main(int argc, char** argv)
 	glEnable(GL_DEPTH_TEST);
 	glClearColor(0.36f, 0.619f, 0.98f, 1.0f);
 
+	// setup key detection
 	glutKeyboardFunc(keyboard);
 
 	glutDisplayFunc(Draw);
 	glutReshapeFunc(resize);
 
+	// seed random number generator
+	time_t seconds;
+	time(&seconds);
+	srand((unsigned int)seconds);
+
+	generate_food();
 	Play(0);
 
 	glutMainLoop();
