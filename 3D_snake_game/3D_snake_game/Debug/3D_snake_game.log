@@ -1,13 +1,13 @@
 ﻿  main.cpp
-D:\U of U\senior\fall 2021\computer graphics\_personal_projects\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(90,33): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\U of U\senior\fall 2021\computer graphics\_personal_projects\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(90,12): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\U of U\senior\fall 2021\computer graphics\_personal_projects\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(100,61): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\U of U\senior\fall 2021\computer graphics\_personal_projects\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(100,33): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\U of U\senior\fall 2021\computer graphics\_personal_projects\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(110,56): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\U of U\senior\fall 2021\computer graphics\_personal_projects\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(110,31): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\U of U\senior\fall 2021\computer graphics\_personal_projects\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(111,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-D:\U of U\senior\fall 2021\computer graphics\_personal_projects\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(122,41): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\U of U\senior\fall 2021\computer graphics\_personal_projects\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(122,23): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
-D:\U of U\senior\fall 2021\computer graphics\_personal_projects\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(123,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
-  3D_snake_game.vcxproj -> D:\U of U\senior\fall 2021\computer graphics\_personal_projects\graphics_projects\3D_snake_game\Debug\3D_snake_game.exe
+C:\Users\erico\Documents\GitHub\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(93,33): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+C:\Users\erico\Documents\GitHub\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(93,12): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+C:\Users\erico\Documents\GitHub\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(103,61): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+C:\Users\erico\Documents\GitHub\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(103,33): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+C:\Users\erico\Documents\GitHub\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(113,56): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+C:\Users\erico\Documents\GitHub\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(113,31): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+C:\Users\erico\Documents\GitHub\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(114,26): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+C:\Users\erico\Documents\GitHub\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(125,41): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+C:\Users\erico\Documents\GitHub\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(125,23): warning C4244: 'argument': conversion from 'GLint' to 'GLfloat', possible loss of data
+C:\Users\erico\Documents\GitHub\graphics_projects\3D_snake_game\3D_snake_game\main.cpp(126,25): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+  3D_snake_game.vcxproj -> C:\Users\erico\Documents\GitHub\graphics_projects\3D_snake_game\Debug\3D_snake_game.exe
           1 file(s) copied.
