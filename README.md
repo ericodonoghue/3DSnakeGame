@@ -1,1 +1,1 @@
-A collection of graphics projects implemented using C++ and OpenGL.
+A 3d snake game implemented using C++ and OpenGL.
